@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import "./variables";
+
+.body{
+    font-family: $font-family-sans-serif;
+    font-size: $font-size-base-px;
+    font-weight: $font-weight-normal;
+    color: $font-color-text;
+    line-height: 1.4;
+}
+
+.main-wrapper{
+    padding:0 !important;
+    min-width: 1140px;
+}

@@ -1,0 +1,43 @@
+@import "~bootstrap/scss/mixins/_breakpoints";
+@import "../../assets/scss/variables";
+
+.input {
+  &[type=email], &[type=password], &[type=text] {
+    height: auto;
+    font-size: $font-size-base-px;
+    //margin-top: 10px;
+    padding: 19px 25px;
+    border-radius: $border-radius-none;
+    background: $color-bcg-light;
+    color: $font-color-text;
+
+    &::placeholder {
+      color: $font-color-placeholder;
+    }
+
+    @media (max-width: map-get($grid-breakpoints, xxxl)) {
+      font-size: $font-size-base-px-xxl;
+      border-radius: $border-radius-none;
+      padding: 16px 22px;
+    }
+  }
+}
+
+label {
+  font-size: $font-size-title-px;
+  font-weight: $font-weight-strong;
+  margin-bottom: 10px;
+  color: $font-color-dark;
+
+  @include media-breakpoint-down(xxl) {
+    font-size: $font-size-title-px-xxl;
+  }
+}
+
+.basic {
+  border: none;
+}
+
+.bordered {
+  border: 2px solid #c3c3cb;
+}

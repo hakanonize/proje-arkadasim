@@ -1,0 +1,55 @@
+@import "~bootstrap/scss/mixins/_breakpoints";
+@import "../../assets/scss/variables";
+
+.rCenter {
+    display:flex;
+    min-height: 100vh;
+    background: cyan;
+    
+}
+
+:global(.container).wrapper{
+    display:flex;
+    align-self:center;
+    width: 50%;
+    max-width: 500px !important;
+    background: $color-bcg-light;
+    padding: 65px 270px 65px 270px;
+    box-shadow: $shadow-container;
+    border-radius: $border-radius-none;
+    margin:100px auto;
+    position: relative;
+    overflow: hidden;
+    
+
+    &.register {
+        max-width: 1200px !important;
+        padding: 80px 100px;
+    }
+}
+
+
+.content {
+    width: 100%;
+    padding:0;
+    
+    .content-grid {
+        display:flex;
+        justify-content: space-between;
+
+    .main {
+        width: 100%;
+        margin-left:30px
+    
+        
+        }
+        button {
+            display: block;
+           margin-left: 40%;
+           margin-right: auto;
+
+                }
+    }
+    
+}
+

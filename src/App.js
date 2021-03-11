@@ -1,20 +1,33 @@
+import './assets/scss/app.scss';
+
 import React from 'react';
-import {BrowserRouter as Router, Route} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import {Container} from "react-bootstrap";
 import Navbar from "./components/navbar.component";
-import Register from './components/register.component';
-import Signin from './components/signin.component';
+import Register from './screens/auth/Register'
+import Login from './screens/auth/Login'
+import {createBrowserHistory} from 'history';
+import Dashboard from './screens/dashboard';
+import GuestRoute from './components/auth/GuestRoute';
+import ProtectedRoute from './components/auth/ProtectedRoute';
 
-function App() {
+const history = createBrowserHistory();
+
+function App(props) {
   return (
-    <Router>
-      <div className="container">
-        <Navbar/>
-        <Route path='/register' exact component= {Register }/>
-        <Route path='/signin' exact component= {Signin} />
-      </div>
-    </Router>
+    
+    <Container fluid className= "main-wrapper">
+        <Router history={history}>
+             <Switch>
+                  <GuestRoute path="/login" exact component = {Login} />
+                  <GuestRoute path="/register" exact component = {Register} />
+                  <ProtectedRoute path="/app" component={Dashboard}  />
+                  <Redirect to={'/login'}/>
+              </Switch>
+        </Router>
+    
+    </Container>
   );
 }
 
